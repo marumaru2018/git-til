@@ -25,3 +25,29 @@ See more info: https://nextjs.org/docs/messages/next-image-unconfigured-host
 58 | height={500}
 
 Next.js version: 16.0.3 (Turbopack)
+
+## 訳
+
+`next/image` の src プロパティ (https://res.cloudinary.com/dqtzs1hhi/image/upload/v1763679375/qlx78xys93g93fd3nuhz.jpg) が無効です。`next.config.js` の images にホスト名「res.cloudinary.com」が設定されていません。
+詳細については、https://nextjs.org/docs/messages/next-image-unconfigured-host をご覧ください。
+
+## 原因と対応
+
+Next.js の設定で、Cloudinary のホスト名を許可する必要があります。next.config.ts に Cloudinary のホスト名を追加する。
+
+```
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+```
