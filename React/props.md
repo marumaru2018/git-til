@@ -1,6 +1,8 @@
 # コンポーネント間でデータを渡すには Props を使用
 
-## 渡す側
+## 使い方
+
+### 渡す側
 
 JSX の属性値の記法
 
@@ -8,7 +10,7 @@ JSX の属性値の記法
 <Welcome name="太郎" age={25} />
 ```
 
-## 受け取り側
+### 受け取り側
 
 ```
 // Propsの型を定義する
@@ -29,3 +31,18 @@ Props が増えすぎると処理が複雑になりコードの可読性も低�
 Props を使用しない形で対応できないかを検討しましょう。
 どうしても親コンポーネント側でデータを管理する必要がある場合のみ
 Props でデータを渡すようにするのが望ましいです。
+
+## 名前を変える
+
+```
+// const Child = (props: ChildProps) => {
+const Child = ({ color: c = "green" }: ChildProps) => {
+  // const { color } = props;
+  return (
+    <div className="component">
+      {/* <h3>Hello Component color={color}</h3> */}
+      <h3>Hello Component color={c}</h3>
+    </div>
+  );
+};
+```
