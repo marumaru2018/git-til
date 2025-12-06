@@ -1,5 +1,13 @@
 # Git コマンド
 
+## Git 最初に
+
+```
+git init
+git add .
+git commit -m "initial commin"
+```
+
 ## Git の設定を確認
 
 ```

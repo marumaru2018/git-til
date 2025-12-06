@@ -1,0 +1,54 @@
+# アイコン
+
+## react-icons Font Awesome
+
+```
+npm install react-icons --save
+```
+
+例
+
+````
+import { FaGithub } from "react-icons/fa6";
+:
+:
+
+        <a
+          className="bg-emerald-600 text-white py-3 px-6 flex items-center rounded-lg hover:bg-emerald-700"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaGithub className="w-6 h-6 mr-2" />
+          GitHub
+        </a>
+```
+
+### 開閉式のハンバーガーメニュー
+```
+import { FaBars, FaXmark } from "react-icons/fa6";
+
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="md:hidden"
+        >
+          {isMenuOpen ? <FaXmark /> : <FaBars />}
+        </button>
+
+        <nav
+          className={`${
+            isMenuOpen ? "block" : "hidden"
+          } md:block absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent`}
+        >
+
+```
+
+## Lucide
+
+````
+
+npm install lucide-react
+
+```
+
+```
