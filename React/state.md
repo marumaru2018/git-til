@@ -121,3 +121,56 @@ const Example = () => {
   );
 };
 ```
+
+## state 使用上の注意 オブジェクト型 さらに
+
+オブジェクト型の state を更新する場合は、新しいオブジェクトを渡す必要がある
+元設定していたものと別のオブジェクト
+
+上記の書き方だとプロパティが多い場合、大変。
+その場合、スプレット演算子を使う
+
+元のオブジェクトが展開されて、新しいオブジェクトを作ってくれる
+スレッド演算子で展開された値を上書きする場合、
+スレッド演算子の後に、カンマで区切ってプロパティと値を記述
+
+```
+  const handlerNameChange = (e) => {
+    //     setPerson({
+    //       name: e.target.value,
+    //       age: person.age,
+    //     });
+    setPerson({...person, name: e.target.value});
+  };
+```
+
+## state 使用上の注意 オブジェクト型 さらに
+
+このままでもいいが
+元の値を使う場合はコールバック関数を使うとよりよいとか、、
+
+コールバック関数で書き換えた実装
+
+```
+const Example = () => {
+  const orderObj = { item: "apple", count: 10 };
+  const [order, setOrder] = useState(orderObj);
+  const changeItem = (e) => {
+    // setOrder({ ...order, item: e.target.value });
+    setOrder((order) => ({ ...order, item: e.target.value }));
+  };
+  const countUp = () => {
+    // setOrder({ ...order, count: order.count + 1 });
+    setOrder((order) => ({ ...order, count: order.count + 1 }));
+  };
+  const countDown = () => {
+    // setOrder({ ...order, count: order.count - 1 });
+    setOrder((order) => ({ ...order, count: order.count - 1 }));
+  };
+```
+
+**()をつける理由**
+setOrder((order) => **(**{ ...order, count: order.count - 1 }**)**);
+
+javascript のエンジンがオブジェクトリテラルの波括弧なのかアロー関数の波括弧なのかわからないなので、
+**オブジェクトを返す場合は、()括弧をつける**
