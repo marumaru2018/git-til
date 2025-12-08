@@ -86,3 +86,38 @@ const Example = () => {
     setCount((prevCount) => prevCount - 1);
   };
 ```
+
+## state 使用上の注意 オブジェクト型
+
+オブジェクト型の state の場合、更新する際は、
+オブジェクトの構造と同じ構造で更新する必要がある
+
+```
+const Example = () => {
+  const personObj = { name: "Tom", age: 18 };
+  const [person, setPerson] = useState(personObj);
+
+  const handlerNameChange = (e) => {
+    setPerson({
+      name: e.target.value,  // ←★画面入力値をセット
+      age: person.age,  // ←★もとの値をセット
+    });
+  };
+
+  const handleReset = () => {
+    setPerson({
+      name: "",
+      age: "",
+    });
+  };
+
+  return (
+    <>
+      {person.name} - {person.age}
+      <input type="text" value={person.name} onChange={handlerNameChange} />
+      <input type="text" value={person.age} />
+      <button onClick={handleReset}>リセット</button>
+    </>
+  );
+};
+```
