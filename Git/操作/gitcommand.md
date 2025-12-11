@@ -37,3 +37,11 @@ git fetch origin 特定ブランチ:特定ブランチ
 ```
 git checkout -b 特定ブランチ origin/特定ブランチ
 ```
+
+## ローカルブランチを削除（別のブランチに移動してから）
+
+git branch -d feature/add-pr-note
+
+## ローカルブランチを強制削除（別のブランチに移動してから）
+
+git branch -D feature/add-pr-note
