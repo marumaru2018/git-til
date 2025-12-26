@@ -19,7 +19,8 @@ npm create vite@latest
 
 プロンプトに従って、プロジェクト名を入力し、フレームワークとして React を選択します。
 Project name: . ← カレントを表す.とする
-フレームワークとして TypeScript + SWC を選択
+Select a framework:React
+Select a variant: TypeScript + SWC を選択
 
 もしくは、オプションによって直接指定する
 npm create vite@latest my-react-app -- --template react-swc

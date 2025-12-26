@@ -2,6 +2,7 @@
 
 ## Tailwind CSS
 
+Tailwind CSS は、ユーティリティファーストの CSS フレームワークです。
 事前に定義されたコンポーネントを活用するのではなく、
 flex、pt-4、text-center、rotate-90 などのような、低レベルのユーティリティクラスが提供されています。
 
@@ -36,8 +37,14 @@ export default defineConfig({
 @import "tailwindcss";
 ```
 
+※index.css ファイル、App.css ファイルに記載されている、デフォルトのスタイルは使わないので、削除する
+
 ## 適用例
 
 ```
 <h1 className="text-5xl text-blue-500">Vite + React</h1>
 ```
+
+参考
+https://tailwindcss.com/docs/styling-with-utility-classes
+https://zenn.dev/d0ne1s/articles/c4909f32ce8fed5ac251
