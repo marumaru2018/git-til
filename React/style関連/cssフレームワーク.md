@@ -1,0 +1,117 @@
+# CSS フレームワーク
+
+Tailwind CSS は、material ui よりも流行っている
+CSS フレームワークは、
+今はマテリアルより shadcn/ui の方が使われているらしい
+シャドシーエヌユーアイ
+バイブコーディングとも相性がいいらしい
+
+## CSS ライブラリ
+
+- Emotion
+  CSS ライブラリの一つに Emotion がある
+
+```
+npm install @emotion/css
+```
+
+Emotion のインストール完了後プロジェクトルートにある tsconfig.json ファイルを開き
+compilerOptions の設定として以下を追記し保存します。
+
+```
+"compilerOptions": {
+    (省略)
+    "jsxImportSource": "@emotion/react",　// 追加
+    "types": ["@emotion/react/types/css-prop"],　//　追加
+  },
+```
+
+Emotion を使用する事で CSS 定義をファイルとしてまとめる事が可能です。
+スタイル定義を画面コンポーネントとは別ファイルで管理することで画面やコンポーネントのサイズが肥大化する事を避ける事ができます。
+
+使用する際は @emotion/react から css を import して
+CSS を定義したオブジェクトを右のように作成します。
+
+export を付ける事で他の画面やコンポーネントから
+CSS 定義を読み込めるようにします。
+
+CSS の定義方法が２種類あり
+１つ目の css()で指定する方法の場合、CSS 定義はキャメルケースで行います。予測変換などが使用可能です。
+
+２つ目の css``（バッククォート）で指定する場合は、キャメルケースではなく通常の記述方法で OK です。
+
+```
+import { css } from "@emotion/react";
+
+export const styles = {
+  Title: css({
+    fontFamily: 'メイリオ',
+    color: 'red',
+  }),
+  Button: css`
+    background:darkblue;
+    color:#FFF;
+    width:120px;
+    height:40px;
+    font-weight:bold;
+    margin:5px;
+  `,
+};
+```
+
+## Material-UI
+
+sx={{***}}という記述でスタイルを指定
+
+```
+<Button variant="contained" sx={{fontWeight:'bold'}}>ボタン</Button>
+```
+
+## Tailwind CSS
+
+Tailwind CSS は、ユーティリティファーストの CSS フレームワークです。
+事前に定義されたコンポーネントを活用するのではなく、
+flex、pt-4、text-center、rotate-90 などのような、低レベルのユーティリティクラスが提供されています。
+
+これにより、マークアップで、柔軟に任意のデザインを記述できます。
+
+### Tailwind CSS 公式
+
+https://tailwindcss.com/docs/installation/using-vite
+
+### インストール
+
+```
+npm install tailwindcss @tailwindcss/vite
+```
+
+### vite.config.js ファイルに、プラグインを追加
+
+```
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import tailwindcss from "@tailwindcss/vite";
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+```
+
+### ./src/index.css ファイルに、Tailwind CSS をインポートする
+
+```
+@import "tailwindcss";
+```
+
+※index.css ファイル、App.css ファイルに記載されている、デフォルトのスタイルは使わないので、削除する
+
+## 適用例
+
+```
+<h1 className="text-5xl text-blue-500">Vite + React</h1>
+```
+
+参考
+https://tailwindcss.com/docs/styling-with-utility-classes
+https://zenn.dev/d0ne1s/articles/c4909f32ce8fed5ac251
