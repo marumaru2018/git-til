@@ -1,0 +1,8 @@
+参考
+https://findy-code.io/events/Ie5IPUat7pYE4?fr=event_archive_20251212
+file:///C:/Users/mm21s/OneDrive/AI/%E3%82%BB%E3%83%9F%E3%83%8A%E3%83%BC/20251212GitHub%20Copilot%E3%82%92%E4%BD%BF%E3%81%84%E3%81%93%E3%81%AA%E3%81%99%20%E5%AE%9F%E4%BE%8B%E3%81%AB%E5%AD%A6%E3%81%B6AI%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%B4%BB%E7%94%A8%E8%A1%93/20251214*GitHub_Copilot%E3%82%92%E4%BD%BF%E3%81%84%E3%81%93%E3%81%AA%E3%81%99*%E5%AE%9F%E4%BE%8B%E3%81%AB%E5%AD%A6%E3%81%B5%E3%82%99AI%E3%82%B3%E3%83%BC%E3%83%86%E3%82%99%E3%82%A3%E3%83%B3%E3%82%AF%E3%82%99%E6%B4%BB%E7%94%A8%E8%A1%93.pdf
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+![alt text](image-2.png)
